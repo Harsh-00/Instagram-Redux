@@ -4,7 +4,7 @@ import Login from "./component/Login";
 
 function App() {
 	return (
-		<div className="flex h-[100vh] ">
+		<div className="flex min-h-[100vh] ">
 			<AddPost />
 			<DisplayPost />
 			<Login />

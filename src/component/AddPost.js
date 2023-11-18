@@ -6,7 +6,7 @@ const AddPost = () => {
 	const dispatch = useDispatch();
 	const [title, setTitle] = useState("");
 	// const [desc, setDesc] = useState("");
-	const [img, setImg] = useState(null);
+	const [url, setUrl] = useState(null);
 
 	function TitleHandler(ev) {
 		setTitle(ev.target.value);
@@ -17,18 +17,18 @@ const AddPost = () => {
 
 	function ImgHandler(ev) {
 		if (ev.target.files && ev.target.files[0]) {
-			setImg(URL.createObjectURL(ev.target.files[0]));
+			setUrl(URL.createObjectURL(ev.target.files[0]));
 		}
 	}
 	function AddHandler() {
 		if (!title) return;
-		dispatch(addPost({ title, img }));
+		dispatch(addPost({ title, url }));
 		// setDesc("");
-		setImg(null);
+		setUrl(null);
 		setTitle("");
 	}
 	return (
-		<div className="bg-blue-300 h-full min-w-[400px]">
+		<div className="bg-blue-300 h-full min-h-screen min-w-[250px]">
 			<input
 				type="text"
 				placeholder="Enter Title Here"

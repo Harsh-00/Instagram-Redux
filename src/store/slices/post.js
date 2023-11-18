@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchData = createAsyncThunk("post/fetchData", async () => {
 	const res = await fetch(
-		"https://api.slingacademy.com/v1/sample-data/photos?limit=20"
+		"https://api.slingacademy.com/v1/sample-data/photos?limit=16"
 	);
 	const data = await res.json();
 	console.log(data);
@@ -11,15 +11,27 @@ export const fetchData = createAsyncThunk("post/fetchData", async () => {
 
 const postSlice = createSlice({
 	name: "post",
-	initialState: { allPost: [], status: "ideal", error: null },
+	initialState: {
+		allPost: [],
+		status: "ideal",
+		error: null,
+		user: false,
+		userInfo: null,
+	},
 	reducers: {
 		addPost(state, action) {
 			state.allPost.push(action.payload);
 		},
-		removePost(state, action) {},
+		deletePost(state, action) {
+			state.allPost.splice(action.payload, 1);
+		},
 		likePost(state, action) {},
 		savePost(state, action) {},
 		sharePost(state, action) {},
+		loggedIn(state, action) {
+			state.user = true;
+			state.userInfo = action.payload;
+		},
 	},
 	extraReducers: (builder) => {
 		builder
@@ -30,12 +42,12 @@ const postSlice = createSlice({
 				state.status = "succeeded";
 				state.allPost = action.payload;
 			})
-			.addCase(fetchData.pending, (state, action) => {
+			.addCase(fetchData.rejected, (state, action) => {
 				state.status = "failed";
 				state.error = action.error.message;
 			});
 	},
 });
 
-export const { addPost, removePost } = postSlice.actions;
+export const { addPost, deletePost, loggedIn } = postSlice.actions;
 export default postSlice.reducer;
