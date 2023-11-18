@@ -54,7 +54,7 @@ const AddPost = () => {
 			</label>
 			<div
 				onClick={AddHandler}
-				className="bg-gray-500 self-center px-4 py-1 rounded-xl mt-5"
+				className="bg-gray-500 self-center px-4 py-1 rounded-xl mt-5 cursor-pointer hover:opacity-[0.9]"
 			>
 				ADD
 			</div>
