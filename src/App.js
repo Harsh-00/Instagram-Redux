@@ -4,10 +4,12 @@ import Login from "./component/Login";
 
 function App() {
 	return (
-		<div className="flex min-h-[100vh] ">
-			<AddPost />
-			<DisplayPost />
+		<div>
 			<Login />
+			<div className="flex min-h-[100vh] ">
+				<AddPost />
+				<DisplayPost />
+			</div>
 		</div>
 	);
 }
