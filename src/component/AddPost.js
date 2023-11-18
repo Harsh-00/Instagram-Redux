@@ -28,7 +28,7 @@ const AddPost = () => {
 		setTitle("");
 	}
 	return (
-		<div className="bg-blue-300 h-full">
+		<div className="bg-blue-300 h-full min-w-[400px]">
 			<input
 				type="text"
 				placeholder="Enter Title Here"

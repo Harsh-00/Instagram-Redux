@@ -1,5 +1,4 @@
 import AddPost from "./component/AddPost";
-import { Counter } from "./component/Counter";
 import DisplayPost from "./component/DisplayPost";
 import Login from "./component/Login";
 
