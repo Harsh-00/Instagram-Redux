@@ -17,6 +17,8 @@ const postSlice = createSlice({
 		error: null,
 		user: false,
 		userInfo: null,
+		share: false,
+		comment: null,
 	},
 	reducers: {
 		addPost(state, action) {
@@ -25,9 +27,20 @@ const postSlice = createSlice({
 		deletePost(state, action) {
 			state.allPost.splice(action.payload, 1);
 		},
-		likePost(state, action) {},
 		savePost(state, action) {},
-		sharePost(state, action) {},
+		sharePost(state, action) {
+			state.share = action.payload;
+		},
+		commentPopup(state, action) {
+			state.comment = action.payload;
+		},
+		commentPost(state, action) {
+			const { commIdx, comment, name } = action.payload;
+			console.log(commIdx, comment, name);
+			if (state.allPost[commIdx]?.comment == null)
+				state.allPost[commIdx].comment = [];
+			state.allPost[commIdx].comment.push({ name, comment });
+		},
 		loggedIn(state, action) {
 			state.user = true;
 			state.userInfo = action.payload;
@@ -49,5 +62,13 @@ const postSlice = createSlice({
 	},
 });
 
-export const { addPost, deletePost, loggedIn } = postSlice.actions;
+export const {
+	addPost,
+	deletePost,
+	commentPopup,
+	loggedIn,
+	sharePost,
+	savePost,
+	commentPost,
+} = postSlice.actions;
 export default postSlice.reducer;

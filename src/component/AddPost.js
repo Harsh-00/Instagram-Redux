@@ -28,8 +28,8 @@ const AddPost = () => {
 		setTitle("");
 	}
 	return (
-		<div className="bg-blue-300 h-full min-h-screen min-w-[300px] py-5 pl-3 flex flex-col gap-3">
-			<div className="text-center font-semibold text-lg pb-4 ">
+		<div className="bg-blue-300 min-h-screen min-w-[260px] py-5 pl-3 flex flex-col gap-3  max-[450px]:hidden">
+			<div className=" self-center font-semibold text-lg pb-1 mb-4 border-b-2 border-black w-fit ">
 				Add Post
 			</div>
 			<label>
@@ -54,7 +54,7 @@ const AddPost = () => {
 			</label>
 			<div
 				onClick={AddHandler}
-				className="bg-gray-500 self-center px-4 py-1 rounded-xl mt-5 cursor-pointer hover:opacity-[0.9]"
+				className=" self-center px-4 py-1  mt-5  hover:opacity-[0.9] cursor-pointer w-fit bg-purple-400  rounded-xl font-semibold  hover:bg-purple-700 hover:text-white"
 			>
 				ADD
 			</div>
