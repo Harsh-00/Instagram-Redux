@@ -55,7 +55,7 @@ const CardContent = ({ ele, idx }) => {
 
 	return (
 		<div className=" bg-purple-300 flex flex-col max-h-[400px] pb-3 rounded-xl relative">
-			<div className="absolute top-2 right-2 z-20 text-xl cursor-pointer hover:scale-125 transition-all duration-300 ease-in-out text-white">
+			<div className="absolute top-2 right-2 text-xl cursor-pointer hover:scale-125 transition-all duration-300 ease-in-out text-white">
 				<FaRegBookmark />
 			</div>
 
