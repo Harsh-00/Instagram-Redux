@@ -13,6 +13,7 @@ const postSlice = createSlice({
 	name: "post",
 	initialState: {
 		allPost: [],
+		savedPost: [],
 		status: "ideal",
 		error: null,
 		user: false,
@@ -27,7 +28,9 @@ const postSlice = createSlice({
 		deletePost(state, action) {
 			state.allPost.splice(action.payload, 1);
 		},
-		savePost(state, action) {},
+		savePost(state, action) {
+			state.savedPost.push(state.allPost[action.payload]);
+		},
 		sharePost(state, action) {
 			state.share = action.payload;
 		},

@@ -43,7 +43,7 @@ const Login = () => {
 			{!login && (
 				<div
 					onClick={PopupHandler}
-					className="cursor-pointer w-fit bg-purple-400 px-4 py-2 rounded-xl font-semibold place-self-end mr-8"
+					className="cursor-pointer w-fit px-4 py-2   place-self-end mr-8 bg-purple-400  rounded-xl border-transparent border-[2.5px] font-semibold  hover:bg-purple-700 hover:text-white transition-all duration-300 ease-in-out hover:border-black"
 				>
 					Login/Signup
 				</div>

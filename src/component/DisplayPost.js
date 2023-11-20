@@ -18,7 +18,7 @@ const DisplayPost = () => {
 		}
 	}, [status, dispatch, posts]);
 	return (
-		<div className=" bg-orange-300 flex-grow h-full min-h-screen">
+		<div className=" bg-gradient-to-r from-[#c9c6c6] to-[#f1f2f6] flex-grow h-full min-h-screen pl-[280px]">
 			<div className="grid grid-cols-1 gap-4 p-4 pb-20 md:grid-cols-3 sm:grid-cols-2">
 				{status === "succeeded" &&
 					posts.map((ele, idx) => {
