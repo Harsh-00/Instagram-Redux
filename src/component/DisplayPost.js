@@ -18,8 +18,8 @@ const DisplayPost = () => {
 		}
 	}, [status, dispatch, posts]);
 	return (
-		<div className=" bg-gradient-to-r from-[#c9c6c6] to-[#f1f2f6] flex-grow h-full min-h-screen pl-[280px]">
-			<div className="grid grid-cols-1 gap-4 p-4 pb-20 md:grid-cols-3 sm:grid-cols-2">
+		<div className=" bg-gradient-to-r from-[#c9c6c6] to-[#f1f2f6] flex-grow h-full min-h-screen pl-[280px] max-[550px]:pl-2 ">
+			<div className="grid grid-cols-1 gap-4 p-4 pb-20 md:grid-cols-3 sm:grid-cols-2 ">
 				{status === "succeeded" &&
 					posts.map((ele, idx) => {
 						return <CardContent ele={ele} key={idx} idx={idx} />;

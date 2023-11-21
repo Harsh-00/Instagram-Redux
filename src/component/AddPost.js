@@ -30,7 +30,7 @@ const AddPost = () => {
 	}
 	return (
 		<div className="fixed ">
-			<div className=" fixed bg-[rgba(255,255,255,0.5)] w-[260px] py-5 pl-3 flex flex-col gap-3 ml-5 rounded-3xl top-24 max-[450px]:hidden ">
+			<div className=" fixed bg-[rgba(255,255,255,0.5)] w-[260px] py-5 pl-3 flex flex-col gap-3 ml-5 rounded-3xl top-24 max-[550px]:hidden ">
 				<div className=" self-center font-semibold text-lg pb-1 mb-4 border-b-2 border-black w-fit ">
 					Add Post
 				</div>
